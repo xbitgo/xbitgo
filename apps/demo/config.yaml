@@ -1,0 +1,31 @@
+name: demo
+env: local
+server:
+  http_addr: "0.0.0.0:9901"
+  grpc_addr: "0.0.0.0:0"
+  addr_name: "/xbitgo/app/demo"
+tracing:
+  service_name: "demo"
+  sampler_type: "const"
+  sampler_param: 1
+  reporter_local_agent_host_port: "localhost:6831"
+  log_spans: false
+
+etcd:
+  endpoints:
+    - 127.0.0.1:2379
+  timeout: 5
+
+DB:
+  type: mysql
+  dsn: "root:@tcp(localhost:3306)/test?charset=utf8mb4&interpolateParams=true&parseTime=true&loc=Local"
+  max_open_conn: 10
+  max_idle_conn: 10
+  conn_max_lifetime: 300
+  conn_max_idle_time: 300
+
+redis:
+  addr: "127.0.0.1:6379"
+  password: ""
+  pool_size: 4
+  db: 0

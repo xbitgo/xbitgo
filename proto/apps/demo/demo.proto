@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package demo;
+
+import "google/api/annotations.proto";
+//import "google/api/gogo.proto";
+//import "apps/demo/demo_message_gen.proto";
+
+option go_package = "proto/apps/demo;demo";
+
+service Demo {
+    // Test
+    rpc Test (TestRequest) returns (TestResponse)  {
+        option (google.api.http) = {
+            post: "/api/demo/test"
+        };
+    }
+}
+
+message TestRequest {
+}
+
+message TestResponse {
+    string msg = 1;
+}

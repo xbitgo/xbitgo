@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package user;
+
+import "google/api/annotations.proto";
+//import "google/api/gogo.proto";
+//import "apps/user/user_message_gen.proto";
+
+option go_package = "proto/apps/user;user";
+
+service User {
+    // Test
+    rpc Test (TestRequest) returns (TestResponse)  {
+        option (google.api.http) = {
+            post: "/api/user/test"
+        };
+    }
+}
+
+message TestRequest {
+}
+
+message TestResponse {
+    string msg = 1;
+}
