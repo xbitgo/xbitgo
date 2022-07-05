@@ -15,7 +15,7 @@
 
 ## 包含三个核心仓库
   
-  - [core核心工具](https://github.com/xbitgo/components)
+  - [core核心工具](https://github.com/xbitgo/core)
   - [components组件库](https://github.com/xbitgo/components)
   - [cli命令行工具](https://github.com/xbitgo/cli)
 
